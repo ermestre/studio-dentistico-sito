@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>International Dental Clinic - Tirana</title>
 <meta name="description" content="Implantologia, protesi e riabilitazioni complete a Tirana, con staff che parla italiano.">
+<meta name="robots" content="noindex,nofollow">
 <style>
 :root{--petrolio:#0f5e7a;--teal:#5fb3c4;--ink:#1d2530;--muted:#5d6878;--bg:#f7f9fb;--line:#e3e9ef}
 *{box-sizing:border-box}
@@ -20,7 +21,7 @@ header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid 
 .brand strong{font-family:Georgia,serif;font-size:17px}
 nav a{color:var(--ink);text-decoration:none;margin-left:16px;font-size:14px}
 nav a:hover{color:var(--petrolio)}
-.lang{display:flex;gap:4px;margin-left:16px}
+.lang{display:none;gap:4px;margin-left:16px}
 .lang button{border:1px solid var(--line);background:#fff;border-radius:6px;padding:4px 9px;cursor:pointer;font-size:13px}
 .lang button.on{background:var(--petrolio);color:#fff;border-color:var(--petrolio)}
 .hero{background:linear-gradient(135deg,#0f5e7a 0%,#2a8aa6 100%);color:#fff;padding:72px 0 64px}
@@ -69,7 +70,8 @@ footer a{color:#fff}
 @media (max-width:820px){
   .hero .wrap,.split{grid-template-columns:1fr}
   .hero h1{font-size:34px}
-  nav{display:none}
+  nav{width:100%;overflow-x:auto;white-space:nowrap;padding-bottom:4px}
+  nav a{margin-left:0;margin-right:18px;font-size:15px}
 }
 </style>
 </head>
