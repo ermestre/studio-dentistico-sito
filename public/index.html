@@ -41,6 +41,7 @@ section h2{font-size:30px;margin-bottom:8px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
 .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}
 .card h3{font-size:19px;margin-bottom:8px;color:var(--petrolio)}
+.price{margin-top:12px;font-weight:600;color:var(--petrolio);font-size:15px}
 .card p{margin:0;color:var(--muted);font-size:15px}
 .videos{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .vid{display:flex;flex-direction:column;justify-content:space-between;min-height:150px;text-decoration:none;color:var(--ink)}
@@ -85,6 +86,7 @@ footer a{color:#fff}
       <nav>
         <a href="#servizi" data-i18n="nav_services"></a>
         <a href="#video" data-i18n="nav_videos"></a>
+        <a href="#viaggio" data-i18n="nav_travel"></a>
         <a href="#dove" data-i18n="nav_where"></a>
         <a href="#contatti" data-i18n="nav_contact"></a>
       </nav>
@@ -117,10 +119,10 @@ footer a{color:#fff}
     <h2 data-i18n="services_title"></h2>
     <p class="sub" data-i18n="services_sub"></p>
     <div class="grid">
-      <div class="card"><h3 data-i18n="s1_t"></h3><p data-i18n="s1_d"></p></div>
-      <div class="card"><h3 data-i18n="s2_t"></h3><p data-i18n="s2_d"></p></div>
-      <div class="card"><h3 data-i18n="s3_t"></h3><p data-i18n="s3_d"></p></div>
-      <div class="card"><h3 data-i18n="s4_t"></h3><p data-i18n="s4_d"></p></div>
+      <div class="card"><h3 data-i18n="s1_t"></h3><p data-i18n="s1_d"></p><p class="price" data-i18n="p1"></p></div>
+      <div class="card"><h3 data-i18n="s2_t"></h3><p data-i18n="s2_d"></p><p class="price" data-i18n="p2"></p></div>
+      <div class="card"><h3 data-i18n="s3_t"></h3><p data-i18n="s3_d"></p><p class="price" data-i18n="p3"></p></div>
+      <div class="card"><h3 data-i18n="s4_t"></h3><p data-i18n="s4_d"></p><p class="price" data-i18n="p4"></p></div>
     </div>
   </div>
 </section>
@@ -138,6 +140,19 @@ footer a{color:#fff}
     <div class="cta" style="margin-top:28px">
       <div><h2 data-i18n="cta_title"></h2><p data-i18n="cta_text"></p></div>
       <a class="btn btn-wa" href="mailto:info@dentista-estero.net" id="ctaMail" data-i18n="cta_btn"></a>
+    </div>
+  </div>
+</section>
+
+<section id="viaggio">
+  <div class="wrap">
+    <h2 data-i18n="travel_title"></h2>
+    <p class="sub" data-i18n="travel_sub"></p>
+    <div class="grid">
+      <div class="card"><h3 data-i18n="tr1_t"></h3><p data-i18n="tr1_d"></p></div>
+      <div class="card"><h3 data-i18n="tr2_t"></h3><p data-i18n="tr2_d"></p></div>
+      <div class="card"><h3 data-i18n="tr3_t"></h3><p data-i18n="tr3_d"></p></div>
+      <div class="card"><h3 data-i18n="tr4_t"></h3><p data-i18n="tr4_d"></p></div>
     </div>
   </div>
 </section>
@@ -195,7 +210,13 @@ footer a{color:#fff}
 <script>
 const T = {
   it: {
-    nav_services:'Servizi', nav_videos:'Video', nav_where:'Dove siamo', nav_contact:'Contatti',
+    nav_services:'Servizi', nav_travel:'Venire a Tirana', nav_videos:'Video', nav_where:'Dove siamo', nav_contact:'Contatti',
+    p1:'A partire da [€ da confermare]', p2:'A partire da [€ da confermare]', p3:'A partire da [€ da confermare]', p4:'A partire da [€ da confermare]',
+    travel_title:'Venire a Tirana', travel_sub:'Dall\'Italia è più semplice di quanto pensi. Ti aiutiamo a organizzare il viaggio.',
+    tr1_t:'Come arrivare', tr1_d:'Voli diretti dall\'Italia verso l\'aeroporto internazionale di Tirana. [Da completare: compagnie e frequenze]',
+    tr2_t:'Dall\'aeroporto allo studio', tr2_d:'[Da completare: servizio di trasferimento e prezzo]',
+    tr3_t:'Dove dormire', tr3_d:'[Da completare: indicazioni su hotel o appartamenti vicini allo studio]',
+    tr4_t:'Quanti giorni servono', tr4_d:'[Da completare dal dottor Cerbini: durata tipica per le cure principali]',
     hero_kicker:'Studio dentistico a Tirana',
     hero_title:'Il tuo sorriso, in buone mani',
     hero_text:'Implantologia, protesi e riabilitazioni complete in una struttura moderna, con uno staff che parla italiano.',
@@ -215,11 +236,11 @@ const T = {
     qr_text:'Stampato per la sala d\'attesa o sui biglietti da visita.',
     contact_title:'Contatti',
     how_title:'Come funziona', how_sub:'Dal primo messaggio alla poltrona, in quattro passi.',
-    how1_t:'Invii l\'ortopanoramica', how1_d:'Mandaci la tua ortopanoramica su WhatsApp, anche in foto.',
+    how1_t:'Invii l\'ortopanoramica', how1_d:'Mandaci la tua ortopanoramica via email, anche in foto.',
     how2_t:'Ricevi il preventivo', how2_d:'Ti rispondiamo con un preventivo chiaro, in euro.',
     how3_t:'Scegli la data', how3_d:'Concordiamo insieme giorni e orari della visita.',
     how4_t:'Ti curi con noi', how4_d:'Ti accogliamo in una struttura moderna, con staff che parla italiano.',
-    cta_title:'Hai già un\'ortopanoramica?', cta_text:'Inviala su WhatsApp e ricevi il tuo preventivo.',
+    cta_title:'Hai già un\'ortopanoramica?', cta_text:'Inviala via email e ricevi il tuo preventivo.',
     cta_btn:'Invia la tua ortopanoramica',
     faq_title:'Domande frequenti', faq_sub:'Le risposte più richieste dai pazienti italiani.',
     faq1_q:'Quanti giorni devo restare a Tirana?', faq1_a:'[Da completare dal dottor Cerbini]',
@@ -232,7 +253,13 @@ const T = {
     footer:'International Dental Clinic · Tirana, Albania'
   },
   sq: {
-    nav_services:'Shërbimet', nav_videos:'Video', nav_where:'Ku jemi', nav_contact:'Kontakt',
+    nav_services:'Shërbimet', nav_travel:'Të vish në Tiranë', nav_videos:'Video', nav_where:'Ku jemi', nav_contact:'Kontakt',
+    p1:'Nga [€ do të konfirmohet]', p2:'Nga [€ do të konfirmohet]', p3:'Nga [€ do të konfirmohet]', p4:'Nga [€ do të konfirmohet]',
+    travel_title:'Të vish në Tiranë', travel_sub:'Nga Italia është më e thjeshtë se sa mendon. Të ndihmojmë të organizosh udhëtimin.',
+    tr1_t:'Si të arrish', tr1_d:'[Do të plotësohet: fluturime dhe kompanitë]',
+    tr2_t:'Nga aeroporti te klinika', tr2_d:'[Do të plotësohet: transferimi dhe çmimi]',
+    tr3_t:'Ku të fjetësh', tr3_d:'[Do të plotësohet: hotele ose apartamente afër klinikës]',
+    tr4_t:'Sa ditë duhen', tr4_d:'[Do të plotësohet nga Dr. Cerbini]',
     hero_kicker:'Klinikë dentare në Tiranë',
     hero_title:'Buzëqeshja juaj, në duar të sigurta',
     hero_text:'Implantologji, proteza dhe rehabilitime të plota në një strukturë moderne, me staf që flet italisht.',
@@ -299,5 +326,6 @@ document.getElementById('qrImg').src =
 
 setLang('it');
 </script>
+<!-- Cloudflare Web Analytics: incolla qui lo script del token, quando lo crei dalla dashboard -->
 </body>
 </html>
