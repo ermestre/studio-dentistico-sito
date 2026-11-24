@@ -48,6 +48,18 @@ section h2{font-size:30px;margin-bottom:8px}
 .vid:hover{border-color:var(--teal);box-shadow:0 6px 18px rgba(15,94,122,.12)}
 .more{margin-top:24px}
 .more a{color:var(--petrolio);font-weight:600}
+.steps{counter-reset:step;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;position:relative}
+.step::before{counter-increment:step;content:counter(step);display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--petrolio);color:#fff;font-weight:700;margin-bottom:12px}
+.step h3{font-size:18px;margin-bottom:8px;color:var(--ink)}
+.step p{margin:0;color:var(--muted);font-size:15px}
+.cta{background:linear-gradient(135deg,#0f5e7a,#2a8aa6);color:#fff;border-radius:16px;padding:36px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.cta h2{color:#fff;font-size:26px;margin-bottom:6px}
+.cta p{margin:0;opacity:.95;max-width:560px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+.faq summary{cursor:pointer;font-family:Georgia,serif;font-size:17px;color:var(--ink)}
+.faq details p{margin:12px 0 0;color:var(--muted)}
+.todo{font-size:13px;color:#a06a00;background:#fff7e0;border-radius:6px;padding:2px 6px}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
 .info p{margin:0 0 14px}
 .qr{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;text-align:center}
@@ -89,7 +101,7 @@ footer a{color:#fff}
       <h1 data-i18n="hero_title"></h1>
       <p data-i18n="hero_text"></p>
       <div class="btns">
-        <a class="btn btn-wa" href="https://wa.me/393294630993" target="_blank" rel="noopener" data-i18n="btn_wa"></a>
+        <a class="btn btn-wa" href="https://wa.me/393294630993" target="_blank" rel="noopener" data-wa="hero" data-i18n="btn_wa"></a>
         <a class="btn btn-ghost" href="https://facebook.com/internationaldentalclinictirana" target="_blank" rel="noopener" data-i18n="btn_fb"></a>
       </div>
     </div>
@@ -106,6 +118,23 @@ footer a{color:#fff}
       <div class="card"><h3 data-i18n="s2_t"></h3><p data-i18n="s2_d"></p></div>
       <div class="card"><h3 data-i18n="s3_t"></h3><p data-i18n="s3_d"></p></div>
       <div class="card"><h3 data-i18n="s4_t"></h3><p data-i18n="s4_d"></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="come">
+  <div class="wrap">
+    <h2 data-i18n="how_title"></h2>
+    <p class="sub" data-i18n="how_sub"></p>
+    <div class="steps">
+      <div class="step"><h3 data-i18n="how1_t"></h3><p data-i18n="how1_d"></p></div>
+      <div class="step"><h3 data-i18n="how2_t"></h3><p data-i18n="how2_d"></p></div>
+      <div class="step"><h3 data-i18n="how3_t"></h3><p data-i18n="how3_d"></p></div>
+      <div class="step"><h3 data-i18n="how4_t"></h3><p data-i18n="how4_d"></p></div>
+    </div>
+    <div class="cta" style="margin-top:28px">
+      <div><h2 data-i18n="cta_title"></h2><p data-i18n="cta_text"></p></div>
+      <a class="btn btn-wa" href="https://wa.me/393294630993" target="_blank" rel="noopener" data-wa="cta" data-i18n="cta_btn"></a>
     </div>
   </div>
 </section>
@@ -132,6 +161,17 @@ footer a{color:#fff}
       <p class="sub" style="margin:6px 0 0" data-i18n="qr_text"></p>
       <img id="qrImg" alt="QR code del sito">
     </div>
+  </div>
+</section>
+
+<section id="faq" class="faq" style="padding-top:20px">
+  <div class="wrap">
+    <h2 data-i18n="faq_title"></h2>
+    <p class="sub" data-i18n="faq_sub"></p>
+    <details><summary data-i18n="faq1_q"></summary><p data-i18n="faq1_a"></p></details>
+    <details><summary data-i18n="faq2_q"></summary><p data-i18n="faq2_a"></p></details>
+    <details><summary data-i18n="faq3_q"></summary><p data-i18n="faq3_a"></p></details>
+    <details><summary data-i18n="faq4_q"></summary><p data-i18n="faq4_a"></p></details>
   </div>
 </section>
 
@@ -171,6 +211,20 @@ const T = {
     qr_title:'Inquadra per aprire il sito',
     qr_text:'Stampato per la sala d\'attesa o sui biglietti da visita.',
     contact_title:'Contatti',
+    how_title:'Come funziona', how_sub:'Dal primo messaggio alla poltrona, in quattro passi.',
+    how1_t:'Invii l\'ortopanoramica', how1_d:'Mandaci la tua ortopanoramica su WhatsApp, anche in foto.',
+    how2_t:'Ricevi il preventivo', how2_d:'Ti rispondiamo con un preventivo chiaro, in euro.',
+    how3_t:'Scegli la data', how3_d:'Concordiamo insieme giorni e orari della visita.',
+    how4_t:'Ti curi con noi', how4_d:'Ti accogliamo in una struttura moderna, con staff che parla italiano.',
+    cta_title:'Hai già un\'ortopanoramica?', cta_text:'Inviala su WhatsApp e ricevi il tuo preventivo.',
+    cta_btn:'Invia la tua ortopanoramica',
+    faq_title:'Domande frequenti', faq_sub:'Le risposte più richieste dai pazienti italiani.',
+    faq1_q:'Quanti giorni devo restare a Tirana?', faq1_a:'[Da completare dal dottor Cerbini]',
+    faq2_q:'Cosa devo portare per la prima visita?', faq2_a:'[Da completare dal dottor Cerbini]',
+    faq3_q:'Come funzionano i pagamenti?', faq3_a:'[Da completare dal dottor Cerbini]',
+    faq4_q:'Come arrivo a Tirana dall\'Italia?', faq4_a:'[Da completare dal dottor Cerbini]',
+    wa_hero:'Buongiorno, vorrei prenotare una visita alla International Dental Clinic.',
+    wa_cta:'Buongiorno, vorrei un preventivo. Allego la mia ortopanoramica.',
     footer:'International Dental Clinic · Tirana, Albania'
   },
   sq: {
@@ -193,6 +247,20 @@ const T = {
     qr_title:'Skanoni për të hapur faqen',
     qr_text:'Printojeni për sallën e pritjes ose për kartat e vizitës.',
     contact_title:'Kontakt',
+    how_title:'Si funksionon', how_sub:'Nga mesazhi i parë deri në karrige, në katër hapa.',
+    how1_t:'Dërgoni ortopanoramikën', how1_d:'Na dërgoni ortopanoramikën tuaj në WhatsApp, edhe si foto.',
+    how2_t:'Merrni ofertën', how2_d:'Ju përgjigjemi me një ofertë të qartë, në euro.',
+    how3_t:'Zgjidhni datën', how3_d:'Bashkërisht përcaktojmë ditët dhe orët e vizitës.',
+    how4_t:'Trajtoheni me ne', how4_d:'Ju presim në një strukturë moderne, me staf që flet italisht.',
+    cta_title:'Keni tashmë një ortopanoramikë?', cta_text:'Dërgojeni në WhatsApp dhe merrni ofertën tuaj.',
+    cta_btn:'Dërgo ortopanoramikën tënde',
+    faq_title:'Pyetje të shpeshta', faq_sub:'Përgjigjet më të kërkuara nga pacientët.',
+    faq1_q:'Sa ditë duhet të qëndroj në Tiranë?', faq1_a:'[Do të plotësohet nga Dr. Cerbini]',
+    faq2_q:'Çfarë duhet të sjell për vizitën e parë?', faq2_a:'[Do të plotësohet nga Dr. Cerbini]',
+    faq3_q:'Si funksionojnë pagesat?', faq3_a:'[Do të plotësohet nga Dr. Cerbini]',
+    faq4_q:'Si arrij në Tiranë nga Italia?', faq4_a:'[Do të plotësohet nga Dr. Cerbini]',
+    wa_hero:'Përshëndetje, dua të rezervoj një vizitë në International Dental Clinic.',
+    wa_cta:'Përshëndetje, dua një ofertë. Po bashkëngjit ortopanoramikën time.',
     footer:'International Dental Clinic · Tiranë, Shqipëri'
   }
 };
@@ -211,6 +279,7 @@ function setLang(l){
   document.documentElement.lang = l === 'sq' ? 'sq' : 'it';
   document.querySelectorAll('[data-i18n]').forEach(el => el.textContent = T[l][el.dataset.i18n]);
   document.querySelectorAll('.lang button').forEach(b => b.classList.toggle('on', b.dataset.lang === l));
+  document.querySelectorAll('[data-wa]').forEach(a => a.href = 'https://wa.me/393294630993?text=' + encodeURIComponent(T[l]['wa_' + a.dataset.wa]));
   document.getElementById('videoGrid').innerHTML = VIDEOS.map(v =>
     `<a class="card vid" href="${v.url}" target="_blank" rel="noopener"><span>${v[l]}</span><em>${l === 'sq' ? 'Shiko në Facebook →' : 'Guarda su Facebook →'}</em></a>`
   ).join('');
